@@ -1,0 +1,27 @@
+version: '3'
+
+tasks:
+  run:
+    desc: Run the application
+    cmds:
+      - go run ./cmd/app
+
+  test:
+    desc: Run tests
+    cmds:
+      - go test ./...
+
+  build:
+    desc: Build the application
+    cmds:
+      - go build -o ./bin/calendar ./cmd/app
+
+  up:
+    desc: Start with Docker Compose
+    cmds:
+      - docker compose up -d --build
+
+  down:
+    desc: Stop Docker Compose
+    cmds:
+      - docker compose down
